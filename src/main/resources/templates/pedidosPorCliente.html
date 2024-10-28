@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pedidos por Cliente</title>
+    <style>
+        /* Estilo para aumentar el espaciado de las columnas */
+        #tablaPedidos {
+            border-collapse: separate;
+            border-spacing: 10px; /* Cambia el valor para más o menos espacio */
+            width: 100%; /* Ancho completo de la tabla */
+            margin: 20px 0; /* Margen superior e inferior */
+        }
+
+        th, td {
+            padding: 10px; /* Espaciado interno para celdas */
+            text-align: left; /* Alineación del texto */
+            border: 1px solid #dee2e6; /* Borde de las celdas */
+        }
+
+        th {
+            background-color: #f2f2f2; /* Color de fondo para los encabezados */
+            font-weight: bold; /* Negrita en los encabezados */
+        }
+
+        /* Estilo para el título */
+        h1 {
+            text-align: center; /* Centrar el texto del título */
+            margin-bottom: 20px; /* Margen inferior */
+        }
+
+        /* Estilo para los botones */
+        .btn {
+            padding: 10px 20px; /* Espaciado interno para los botones */
+            margin: 10px; /* Margen entre los botones */
+            font-size: 16px; /* Tamaño de fuente */
+            text-decoration: none; /* Sin subrayado en los enlaces */
+            border-radius: 5px; /* Bordes redondeados */
+            color: white; /* Color del texto */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Color de fondo para el botón primario */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Color más oscuro al pasar el ratón por el botón primario */
+            transform: scale(1.05); /* Aumento de tamaño en hover */
+        }
+    </style>
+</head>
+<body>
+<h1>Pedidos de Cliente</h1>
+<table id="tablaPedidos" class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Nro Pedido</th>
+        <th>Fecha Emisión</th>
+        <th>Estado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pedido : ${pedidos}">
+        <td th:text="${pedido.id}"></td>
+        <td th:text="${pedido.fechaEmision}"></td>
+        <td th:text="${pedido.estadoPedido.nombreEstado}"></td> <!-- Cambiado a 'nombreEstado' -->
+    </tr>
+    </tbody>
+</table>
+<a href="#" th:href="@{/}" class="btn btn-primary">Home</a> <!-- Botón de Home mejorado -->
+</body>
+</html>

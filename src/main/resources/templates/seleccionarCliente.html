@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Seleccionar Cliente</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+</head>
+<body>
+<h1>Seleccionar Cliente</h1>
+<form action="#" th:action="@{/home/pedidosCliente}" method="get">
+  <label for="clienteId">Elige un cliente:</label>
+  <select id="clienteId" name="clienteId" class="form-select" required>
+    <option value="" disabled selected>Seleccione un cliente</option>
+    <th:block th:each="cliente : ${clientes}">
+      <option th:value="${cliente.id}" th:text="${cliente.nombre}"></option>
+    </th:block>
+  </select>
+  <button type="submit" class="btn btn-primary">Ver Pedidos</button>
+</form>
+<a href="#" th:href="@{/}" class="btn btn-primary">Home</a> <!-- Botón de Home -->
+</body>
+</html>

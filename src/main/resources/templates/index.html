@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Buscar</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <style>
+        /* Estilo para los botones */
+        .btn {
+            padding: 10px 20px; /* Espaciado interno para los botones */
+            margin: 10px; /* Margen entre los botones */
+            font-size: 16px; /* Tamaño de fuente */
+            text-decoration: none; /* Sin subrayado en los enlaces */
+            border-radius: 5px; /* Bordes redondeados */
+            color: white; /* Color del texto */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Color de fondo para el botón primario */
+        }
+
+        .btn-danger {
+            background-color: #dc3545; /* Color de fondo para el botón peligro */
+        }
+
+        .btn:hover {
+            opacity: 0.9; /* Efecto hover */
+        }
+
+        /* Estilo para el footer */
+        footer {
+            text-align: center; /* Centrar el texto del footer */
+            margin-top: 20px; /* Margen superior */
+            padding: 10px; /* Espaciado interno */
+            background-color: #f8f9fa; /* Color de fondo del footer */
+            color: #6c757d; /* Color del texto del footer */
+            border-top: 1px solid #dee2e6; /* Línea superior */
+        }
+    </style>
+</head>
+<body>
+<h1>Buscar</h1>
+<a th:href="@{/home/clientes}" class="btn btn-primary" role="button" aria-label="Buscar por cliente">Por Cliente</a>
+<a th:href="@{/home/pedidosListos}" class="btn btn-danger" role="button" aria-label="Ver pedidos listos">Pedidos Listos</a>
+
+<footer>
+    © 2024 - Pedidos Terminados <br>
+    Coded by Marson
+</footer>
+</body>
+</html>
